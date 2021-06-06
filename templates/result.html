@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{ url_for('static', filename = 'favicon.png') }}" type="image/icon type">
+    <title>Diabetes Risk Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+</head>
+<body style = "background-color: rgb(231, 90, 90);">
+
+<div class="ui container">
+        <h3 style = "background-color: #0fd3dd; font-size: xx-large;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="ui block center aligned header">
+            Diabetes Risk Calculator
+        </h3>
+		{% if prediction == 1 %}
+		<div class="ui inverted segment">
+		<div class="ui inverted placeholder segment">
+			<div class="ui icon header">
+			  <i class="thumbs down icon"></i>
+			  Oops! You Are Diabetic.
+			</div>
+			<a  href="{{ url_for('home') }}"><div class="ui primary animated fade button" tabindex="0">
+				<div class="visible content">Back to Home</div>
+				<div class="hidden content">
+					<i class="left arrow icon"></i>
+				</div>
+			  </div></a>
+		  </div>
+		  <div class="ui grey inverted segment">
+			<p style="font-size: larger;">Diabetes prevention: 5 tips for taking control<br>
+				★ Get more physical activity.<br>
+				★ Get plenty of fiber.<br>
+				★ Go for whole grains.<br>
+				★ Lose extra weight.<br>
+				★ Skip fad diets and just make healthier choices.<br>
+			</p>
+		  </div>
+		</div>
+		{% elif prediction == 0 %}
+		<div class="ui inverted placeholder segment">
+			<div class="ui icon header">
+			  <i class="thumbs up icon"></i>
+			  GREAT! You Don't Have Diabetes.
+			</div>
+			<a  href="{{ url_for('home') }}"><div class="ui primary animated fade button" tabindex="0">
+				<div class="visible content">Back to Home</div>
+				<div class="hidden content">
+					<i class="left arrow icon"></i>
+				</div>
+			  </div></a>
+		  </div>
+		{% elif no_value %}
+		<div class="ui inverted segment">
+			<div class="ui grey inverted segment">
+				<p style="font-size: larger;">The following features have been asked to predict whether a person is diabetic or not:<br>
+					★ Pregnancies: Number of times pregnant.<br>
+					★ Glucose: Plasma glucose concentration over 2 hours in an oral glucose tolerance test.<br>
+					★ BloodPressure: Diastolic blood pressure (mm Hg).<br>
+					★ SkinThickness: Triceps skin fold thickness (mm).<br>
+					★ Insulin: 2-Hour serum insulin (mu U/ml).<br>
+					★ BMI: Body mass index (weight in kg/(height in m)2).<br>
+					★ DiabetesPedigreeFunction: Diabetes pedigree function (a function which scores likelihood of diabetes based on family history).<br>
+					★ Age: Age (years).<br>
+					★ Outcome: Class variable (0 if non-diabetic, 1 if diabetic).<br>
+				</p>
+			  </div>
+		<div class="ui inverted placeholder segment">
+			<div class="ui icon header">
+			  <i class="handshake icon"></i>
+			  PLEASE! Enter Valid Data.
+			</div>
+			<a  href="{{ url_for('home') }}"><div class="ui primary animated fade button" tabindex="0">
+				<div class="visible content">Back to Home</div>
+				<div class="hidden content">
+					<i class="left arrow icon"></i>
+				</div>
+			  </div></a>
+		  </div>
+		</div>
+		{% endif %}
+
+</div>
+
+</body>
+</html>
