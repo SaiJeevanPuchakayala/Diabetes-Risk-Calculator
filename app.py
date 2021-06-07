@@ -6,6 +6,7 @@ from sklearn import preprocessing
 model = pickle.load(open("diabetes.pkl", 'rb'))
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "!2345@abc"
 
 @app.route("/")
 def home():
