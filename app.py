@@ -12,18 +12,18 @@ app.config['SECRET_KEY'] = "!2345@abc"
 def home():
 	return render_template('index.html')
 
-@app.route("/predict", methods = ['POST'])
+@app.route("/predict", methods = ['GET','POST'])
 def predict():
 	try:
 		if request.method == "POST":
-			preg = float(request.form['pregnancies'])
-			glucose = float(request.form['glucose'])
-			bp = float(request.form['bloodpressure'])
-			st = float(request.form['skinthickness'])
-			insulin = float(request.form['insulin'])
-			bmi = float(request.form['bmi'])
-			dpf = float(request.form['dpf'])
-			age = float(request.form['age'])
+			preg = float(request.form.get('pregnancies'))
+			glucose = float(request.form.get('glucose'))
+			bp = float(request.form.get('bloodpressure'))
+			st = float(request.form.get('skinthickness'))
+			insulin = float(request.form.get('insulin'))
+			bmi = float(request.form.get('bmi'))
+			dpf = float(request.form.get('dpf'))
+			age = float(request.form.get('age'))
 			
 		
 			l = [preg, glucose, bp, st, insulin, bmi, dpf, age]
