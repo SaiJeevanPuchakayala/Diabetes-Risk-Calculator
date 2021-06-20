@@ -8,4 +8,6 @@ This Web App is live at : [Diabetes Risk Calculator.](https://diabetes-risk-calc
 
 * Blood pressure has a negative influence on the prediction, i.e. higher blood pressure is correlated with a person not being diabetic. (also, note that blood pressure is more important as a feature than age, because the magnitude is higher for blood pressure).
 
+### Accuracy achieved: 98.25% (Random Forest)
+
 
