@@ -10,4 +10,4 @@ This Web App is live at : [Diabetes Risk Calculator.](https://diabetes-risk-calc
 
 ### Accuracy achieved: 98.25% (Random Forest)
 
-
+### Model code and Data available [here](https://github.com/SaiJeevanPuchakayala/Implement-ML)
