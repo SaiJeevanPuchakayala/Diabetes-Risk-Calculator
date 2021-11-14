@@ -9,15 +9,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 
 </head>
-<body style = "background-color: rgb(231, 90, 90);">
+<body style = "background-color: #1b1c1d;">
 
 <div class="ui container">
-        <h3 style = "background-color: #0fd3dd; font-size: xx-large;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="ui block center aligned header">
+        <h3 style = "background-color: #1b1c1d;font-size: xx-large;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;margin-top: 10px;" class="ui block inverted center aligned header">
             Diabetes Risk Calculator
         </h3>
 		{% if prediction == 1 %}
 		<div class="ui inverted segment">
-		<div class="ui inverted placeholder segment">
+		<div class="ui primary placeholder segment">
 			<div class="ui icon header">
 			  <i class="thumbs down icon"></i>
 			  Oops! You Are Diabetic.
@@ -29,7 +29,7 @@
 				</div>
 			  </div></a>
 		  </div>
-		  <div class="ui grey inverted segment">
+		  <div class="ui inverted segment">
 			<p style="font-size: larger;">Diabetes prevention: 5 tips for taking control<br>
 				★ Get more physical activity.<br>
 				★ Get plenty of fiber.<br>
@@ -40,7 +40,7 @@
 		  </div>
 		</div>
 		{% elif prediction == 0 %}
-		<div class="ui inverted placeholder segment">
+		<div class="ui primary placeholder segment">
 			<div class="ui icon header">
 			  <i class="thumbs up icon"></i>
 			  GREAT! You Are Not Diabetic.
@@ -54,7 +54,7 @@
 		  </div>
 		{% elif no_value %}
 		<div class="ui inverted segment">
-			<div class="ui grey inverted segment">
+			<div class="ui inverted segment">
 				<p style="font-size: larger;">The following features have been asked to predict whether a person is diabetic or not:<br>
 					★ Pregnancies: Number of times pregnant.<br>
 					★ Glucose: Plasma glucose concentration over 2 hours in an oral glucose tolerance test.<br>
@@ -67,7 +67,7 @@
 					★ Outcome: Class variable (0 if non-diabetic, 1 if diabetic).<br>
 				</p>
 			  </div>
-		<div class="ui inverted placeholder segment">
+		<div class="ui primary placeholder segment">
 			<div class="ui icon header">
 			  <i class="handshake icon"></i>
 			  PLEASE! Enter Valid Data.
